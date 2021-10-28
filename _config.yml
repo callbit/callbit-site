@@ -1,0 +1,59 @@
+title: "Callbit.com.br"
+email: rjcaubit@gmail.com
+timezone: UTC
+baseurl: "/affiliates-jekyll-theme"
+permalink: "/:title/"
+logo: 'assets/images/callbit.png'
+favicon: 'assets/images/favico.ico'
+author: Caubit
+paginate: 30
+disqus: 'callbit-com-br'
+comments: true
+locale: pt_br
+lang: pt_br
+feed_items: 10
+feed_update_period: daily
+feed_update_frequency: 1
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+sass:
+  sass_dir: _sass
+  style: :compressed
+ganalytics: G-NMD05W56Y6
+
+# Authors
+authors:
+  caubit:
+    name: Caubit
+    display_name: Caubit
+    avatar: 'assets/images/sal.png'
+    email: rjcaubit@gmail.com
+  john:
+    name: John
+    display_name: John
+    avatar: 'assets/images/john.png'
+    email: wowthemesnet@gmail.com
+    web: https://www.wowthemes.net/category/jekyll-themes/
+    twitter: https://twitter.com/wowthemesnet
+    description: "This is the author box. Write a short description of the author here. You are currently previewing Affiliates theme demo, a Jekyll template compatible with Github pages."
+
+# Social
+social:
+  instagram: https://www.instagram.com/caubit/
+  facebook: https://www.facebook.com/caubit
+  twitter: https://twitter.com/rjcaubit
+  linkedin: https://www.linkedin.com/me/caubit
+
+# Plugins
+plugins: 
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-archives
+- jekyll-mermaid
+
+mermaid:
+  src: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'

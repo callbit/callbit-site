@@ -1,0 +1,1 @@
+Sitemap: /affiliates-jekyll-theme/sitemap.xml
