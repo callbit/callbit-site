@@ -1,0 +1,77 @@
+I"�<p>HTTP Headers permitem que o browser ( client ) e o servidor se comunicam através de HTTP request ou response e para proteger o cliente ( browser ) contra alguns ataques, foram adicionados a browser modernos alguns mecanismos de proteção para tratar vulnerabilidades.</p>
+
+<p>Esses Headers são:</p>
+
+<ol>
+  <li>
+    <p><strong>HTTP Strict-Transport-Security (HSTS)</strong>: força o uso de conexões criptografadas, evitando assim um ataque de Man in the Middle, que pode ocorrer, por exemplo em Wifi Públicos, já que todas as requisições são forçadas a serem em HTTPS.</p>
+  </li>
+  <li>
+    <p><strong>Content Security Policy (CSP)</strong>: Protege contra ataques de injeção de conteúdos como Cross-Site Scripting (XSS), por bloquear requisição entre domínios não autorizados.</p>
+  </li>
+  <li>
+    <p><strong>X-Frame-Options</strong>:  Evita ataques como Clickjacking ( ataque de roubo de cliques ), por dizer se o browser se deve ou não deve carregar conteúdos de endereços especificados,  importante para  tags html como <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code> ou <code>&lt;embed&gt;</code>.</p>
+  </li>
+  <li>
+    <p><strong>X-Content-Type-Options</strong>: Protege contra vulnerabilidades de MIME sniffing, evita que o browser carregue arquivos que foram injetados de forma invalida ou indevida, evitando por exemplo que  seja injetado um arquivo texto com um javascript e ele seja executado do lado do cliente.</p>
+  </li>
+  <li>
+    <p><strong>X-XSS-Protection</strong>: faz com que os navegadores apliquem filtros contra ataques XSS.  XSS são ataques onde uma pessoa poder forçar a execução de códigos indevidos/arbitrários na maquina de outra pessoa.</p>
+  </li>
+</ol>
+
+<p>Bônus 2 extras:</p>
+
+<p>Server:</p>
+
+<p>X-Powered-By:</p>
+
+<p>Como validar</p>
+
+<p>Browser</p>
+
+<p>Valores esperados:</p>
+
+<p>HTTP Strict-Transport-Security (HSTS):</p>
+
+<ul>
+  <li>Strict-Transport-Security: max-age=<code>expire-time</code></li>
+  <li>Strict-Transport-Security: max-age=<code>expire-time</code>; includeSubDomains</li>
+  <li>Strict-Transport-Security: max-age=<code>expire-time</code>; preload
+    <blockquote>
+      <p>Note que você deve incluir um número para o expire-time, tempo em segundo.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Content Security Policy (CSP):</p>
+<ul>
+  <li>Content-Security-Policy: policy
+    <blockquote>
+      <p><strong>Exemplo</strong> Content-Security-Policy: default-src ‘self’</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>X-Frame-Options:</p>
+<ul>
+  <li>X-Frame-Options: DENY</li>
+  <li>X-Frame-Options: SAMEORIGIN</li>
+</ul>
+
+<p>X-Content-Type-Options:</p>
+<ul>
+  <li>X-Content-Type-Options: nosniff</li>
+</ul>
+
+<p>X-XSS-Protection:</p>
+<ul>
+  <li>X-XSS-Protection: 1</li>
+  <li>X-XSS-Protection: 1; mode=block</li>
+  <li>X-XSS-Protection: 1; report=&lt; reporting-uri &gt;
+    <blockquote>
+      <p>1 habilita a filtragem, se um ataque for detactado ele reporta ao <em>reporting-uri</em> o ataque</p>
+    </blockquote>
+  </li>
+</ul>
+:ET

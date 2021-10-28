@@ -1,116 +1,173 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt_br"><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="pt_br" /><updated>2021-10-28T15:07:20+00:00</updated><id>/feed.xml</id><title type="html">Callbit.com.br</title><author><name>Caubit</name></author><entry><title type="html">Recaptcha</title><link href="/captcha/" rel="alternate" type="text/html" title="Recaptcha" /><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><id>/captcha</id><content type="html" xml:base="/captcha/">reCAPTCHA
-O reCAPTCHA é um serviço de CAPTCHA sigla, em inglês, para “Completely Automated Public Turing Test to Tell Computers and Humans Apart”, que em tradução simplificada seria “Teste de Turing público e automatizado para separar computadores de humanos”, ou seja um processo para testar se é uma pessoa ou máquina. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt_br"><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="pt_br" /><updated>2021-10-28T15:31:13+00:00</updated><id>/feed.xml</id><title type="html">Callbit.com.br</title><author><name>Caubit</name></author><entry><title type="html">Recaptcha</title><link href="/captcha/" rel="alternate" type="text/html" title="Recaptcha" /><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><id>/captcha</id><content type="html" xml:base="/captcha/">&lt;p&gt;reCAPTCHA
+O reCAPTCHA é um serviço de CAPTCHA sigla, em inglês, para “Completely Automated Public Turing Test to Tell Computers and Humans Apart”, que em tradução simplificada seria “Teste de Turing público e automatizado para separar computadores de humanos”, ou seja um processo para testar se é uma pessoa ou máquina.&lt;/p&gt;
 
-O objetivo principal é conseguir separar trafego para sites e aplicativos, bloqueando que Robôs utilizem seus sites e evitando assim sobrecarga no seu servidor. 
+&lt;p&gt;O objetivo principal é conseguir separar trafego para sites e aplicativos, bloqueando que Robôs utilizem seus sites e evitando assim sobrecarga no seu servidor.&lt;/p&gt;
 
-Atualmente o reCAPTCHA possui 2 implementações a V2 ( invisível e checkbox ) e a V3 ( totalmente transparente, utilizando um score ).
+&lt;p&gt;Atualmente o reCAPTCHA possui 2 implementações a V2 ( invisível e checkbox ) e a V3 ( totalmente transparente, utilizando um score ).&lt;/p&gt;
 
-Sendo bem simplista a diferença entre a V2 e a V3 é que esta ultima não apresente desafio algum para o usuário final, havendo apenas bloquei ou não para o usuário final, segundo o google a nova versão garante mais autonomia para os gestores de site. 
+&lt;p&gt;Sendo bem simplista a diferença entre a V2 e a V3 é que esta ultima não apresente desafio algum para o usuário final, havendo apenas bloquei ou não para o usuário final, segundo o google a nova versão garante mais autonomia para os gestores de site.&lt;/p&gt;
 
-[Clique aqui](https://youtu.be/tbvxFW4UJdU)
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/tbvxFW4UJdU&quot;&gt;Clique aqui&lt;/a&gt;&lt;/p&gt;
 
-Independente da versão utilizada ( V2 ou V3 ) o processo de implementação do reCAPTCHA é feito em 2 blocos, um processo que roda no lado do cliente e um segundo que roda no lado do servidor, vide esquema abaixo:
+&lt;p&gt;Independente da versão utilizada ( V2 ou V3 ) o processo de implementação do reCAPTCHA é feito em 2 blocos, um processo que roda no lado do cliente e um segundo que roda no lado do servidor, vide esquema abaixo:&lt;/p&gt;
 
-![enter image description here](../assets/images/sequencerecaptcha.png)
+&lt;p&gt;&lt;img src=&quot;../assets/images/sequencerecaptcha.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/p&gt;
 
-Um dos erros mais comuns na implementação e não testar o segunda etapa, onde o seu servidor vai até o google e verifica se o token passado é válido. Caso essa etapa não seja feita  a implementação do reCAPTCHA está totalmente ineficaz, comprometendo assim o seu servidor.
+&lt;p&gt;Um dos erros mais comuns na implementação e não testar o segunda etapa, onde o seu servidor vai até o google e verifica se o token passado é válido. Caso essa etapa não seja feita  a implementação do reCAPTCHA está totalmente ineficaz, comprometendo assim o seu servidor.&lt;/p&gt;
 
-Uma forma muito simple é utilizando uma ferramenta de captura de requisição como o Burp Suite, interceptar a requisição e alterar o valor do campo g-recaptcha-response e verificar se o servidor ira retornar sucesso ou falha na requisição, caso o servidor aceite requisição com o valor do g-recaptcha-response alterado, significa que sua implementação esta insegura e o reCAPTCHA foi implementado de forma insegura e incorreta. 
- 
-Outra forma de testar é utilizando o chrome e copiar a requisição feita via curl e reenviar/alterar via linha de comando, como o reCAPTCHA não aceita reutilização token, o reenvio via curl tem que retornar erro no retorno.
+&lt;p&gt;Uma forma muito simple é utilizando uma ferramenta de captura de requisição como o Burp Suite, interceptar a requisição e alterar o valor do campo g-recaptcha-response e verificar se o servidor ira retornar sucesso ou falha na requisição, caso o servidor aceite requisição com o valor do g-recaptcha-response alterado, significa que sua implementação esta insegura e o reCAPTCHA foi implementado de forma insegura e incorreta.&lt;/p&gt;
 
-O reCAPTCHA é uma solução muito útil e eficaz para mitigação abuso no consumo do servidor, mas para que isso ocorra a implementação deve ser feita de forma correta, caso contrário será somente uma feature inútil ao seu site.</content><author><name>caubit</name></author><category term="cybersecurity" /><category term="captcha" /><summary type="html">reCAPTCHA O reCAPTCHA é um serviço de CAPTCHA sigla, em inglês, para “Completely Automated Public Turing Test to Tell Computers and Humans Apart”, que em tradução simplificada seria “Teste de Turing público e automatizado para separar computadores de humanos”, ou seja um processo para testar se é uma pessoa ou máquina.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/1.jpg" /><media:content medium="image" url="/assets/images/1.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">NMAP básico</title><link href="/nmap-basico/" rel="alternate" type="text/html" title="NMAP básico" /><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><id>/nmap-basico</id><content type="html" xml:base="/nmap-basico/">NMAP (&quot;Network Mapper&quot;) é uma ferramenta free e opensouce para disconery de rede e auditoria de segurança. 
+&lt;p&gt;Outra forma de testar é utilizando o chrome e copiar a requisição feita via curl e reenviar/alterar via linha de comando, como o reCAPTCHA não aceita reutilização token, o reenvio via curl tem que retornar erro no retorno.&lt;/p&gt;
 
-## Instalando NMAP
-1. Atualizando pacotes do Linux
-&gt;`sudo apt-get update`
-2. Install NMAP
-&gt;`sudo apt-get install nmap`
-3. Verifique a versão 
-&gt;`nmap --version`
+&lt;p&gt;O reCAPTCHA é uma solução muito útil e eficaz para mitigação abuso no consumo do servidor, mas para que isso ocorra a implementação deve ser feita de forma correta, caso contrário será somente uma feature inútil ao seu site.&lt;/p&gt;</content><author><name>caubit</name></author><category term="cybersecurity" /><category term="captcha" /><summary type="html">reCAPTCHA O reCAPTCHA é um serviço de CAPTCHA sigla, em inglês, para “Completely Automated Public Turing Test to Tell Computers and Humans Apart”, que em tradução simplificada seria “Teste de Turing público e automatizado para separar computadores de humanos”, ou seja um processo para testar se é uma pessoa ou máquina.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/1.jpg" /><media:content medium="image" url="/assets/images/1.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">NMAP básico</title><link href="/nmap-basico/" rel="alternate" type="text/html" title="NMAP básico" /><published>2021-10-27T00:00:00+00:00</published><updated>2021-10-27T00:00:00+00:00</updated><id>/nmap-basico</id><content type="html" xml:base="/nmap-basico/">&lt;p&gt;NMAP (“Network Mapper”) é uma ferramenta free e opensouce para disconery de rede e auditoria de segurança.&lt;/p&gt;
 
-## Básico contra um host
-&gt; *nmap* ``1.1.1.1`` 
+&lt;h2 id=&quot;instalando-nmap&quot;&gt;Instalando NMAP&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Atualizando pacotes do Linux
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install NMAP
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;code&gt;sudo apt-get install nmap&lt;/code&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Verifique a versão
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;code&gt;nmap --version&lt;/code&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;básico-contra-um-host&quot;&gt;Básico contra um host&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; &lt;code&gt;1.1.1.1&lt;/code&gt; 
 Ou você pode usar um endereço 
-&gt; nmap ``callbit.online``
+nmap &lt;code&gt;callbit.online&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan contra uma porta especifica 
-Um range de portas
-&gt; *nmap* -p ``1-65535`` ``1.1.1.1``
+&lt;h2 id=&quot;scan-contra-uma-porta-especifica&quot;&gt;Scan contra uma porta especifica&lt;/h2&gt;
+&lt;p&gt;Um range de portas&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; -p &lt;code&gt;1-65535&lt;/code&gt; &lt;code&gt;1.1.1.1&lt;/code&gt;
 Uma serie de portas
-&gt; *nmap* -p ``80,443`` ``1.1.1.1``
+&lt;em&gt;nmap&lt;/em&gt; -p &lt;code&gt;80,443&lt;/code&gt; &lt;code&gt;1.1.1.1&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan de múltiplos IPs
-&gt; *nmap* ``1.1.1.1`` ``2.2.2.2``
+&lt;h2 id=&quot;scan-de-múltiplos-ips&quot;&gt;Scan de múltiplos IPs&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; &lt;code&gt;1.1.1.1&lt;/code&gt; &lt;code&gt;2.2.2.2&lt;/code&gt;
 Ips consecutivos
-&gt; *nmap* -p ``1.1.1.1,2,3,4``
+&lt;em&gt;nmap&lt;/em&gt; -p &lt;code&gt;1.1.1.1,2,3,4&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan nas portas mais populares
-&gt; *nmap* --top-ports ``20 192.168.1.106``
+&lt;h2 id=&quot;scan-nas-portas-mais-populares&quot;&gt;Scan nas portas mais populares&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; –top-ports &lt;code&gt;20 192.168.1.106&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan em range de IP
-&gt; *nmap* -p ``8.8.8.0/28`` ou *nmap* ``8.8.8.1-14``
+&lt;h2 id=&quot;scan-em-range-de-ip&quot;&gt;Scan em range de IP&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; -p &lt;code&gt;8.8.8.0/28&lt;/code&gt; ou &lt;em&gt;nmap&lt;/em&gt; &lt;code&gt;8.8.8.1-14&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan agressivo
-&gt; *nmap* -A ``8.8.8.0``
+&lt;h2 id=&quot;scan-agressivo&quot;&gt;Scan agressivo&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; -A &lt;code&gt;8.8.8.0&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan máquinas ativas
-&gt; *nmap* -sP ``8.8.8.0``
+&lt;h2 id=&quot;scan-máquinas-ativas&quot;&gt;Scan máquinas ativas&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; -sP &lt;code&gt;8.8.8.0&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan agressivo
-&gt; *nmap* -sL ``8.8.8.0``
+&lt;h2 id=&quot;scan-agressivo-1&quot;&gt;Scan agressivo&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; -sL &lt;code&gt;8.8.8.0&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan obter o SO
-&gt; *nmap* -O ``8.8.8.0``
+&lt;h2 id=&quot;scan-obter-o-so&quot;&gt;Scan obter o SO&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt; -O &lt;code&gt;8.8.8.0&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-## Scan com scripts básicos
-&gt; *nmap*  -Pn --script vuln ``8.8.8.0``</content><author><name>caubit</name></author><category term="cybersecuroty" /><category term="captcha" /><summary type="html">NMAP (“Network Mapper”) é uma ferramenta free e opensouce para disconery de rede e auditoria de segurança.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/7.jpg" /><media:content medium="image" url="/assets/images/7.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">HTTP Headers de segurança - 5 Security Headers que você deve configurar no seu Site!</title><link href="/Header/" rel="alternate" type="text/html" title="HTTP Headers de segurança - 5 Security Headers que você deve configurar no seu Site!" /><published>2021-10-26T00:00:00+00:00</published><updated>2021-10-26T00:00:00+00:00</updated><id>/Header</id><content type="html" xml:base="/Header/">HTTP Headers permitem que o browser ( client ) e o servidor se comunicam através de HTTP request ou response e para proteger o cliente ( browser ) contra alguns ataques, foram adicionados a browser modernos alguns mecanismos de proteção para tratar vulnerabilidades. 
+&lt;h2 id=&quot;scan-com-scripts-básicos&quot;&gt;Scan com scripts básicos&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;nmap&lt;/em&gt;  -Pn –script vuln &lt;code&gt;8.8.8.0&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>caubit</name></author><category term="cybersecuroty" /><category term="captcha" /><summary type="html">NMAP (“Network Mapper”) é uma ferramenta free e opensouce para disconery de rede e auditoria de segurança.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/7.jpg" /><media:content medium="image" url="/assets/images/7.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">HTTP Headers de segurança - 5 Security Headers que você deve configurar no seu Site!</title><link href="/Header/" rel="alternate" type="text/html" title="HTTP Headers de segurança - 5 Security Headers que você deve configurar no seu Site!" /><published>2021-10-26T00:00:00+00:00</published><updated>2021-10-26T00:00:00+00:00</updated><id>/Header</id><content type="html" xml:base="/Header/">&lt;p&gt;HTTP Headers permitem que o browser ( client ) e o servidor se comunicam através de HTTP request ou response e para proteger o cliente ( browser ) contra alguns ataques, foram adicionados a browser modernos alguns mecanismos de proteção para tratar vulnerabilidades.&lt;/p&gt;
 
-Esses Headers são:
+&lt;p&gt;Esses Headers são:&lt;/p&gt;
 
-1. **HTTP Strict-Transport-Security (HSTS)**: força o uso de conexões criptografadas, evitando assim um ataque de Man in the Middle, que pode ocorrer, por exemplo em Wifi Públicos, já que todas as requisições são forçadas a serem em HTTPS.
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;HTTP Strict-Transport-Security (HSTS)&lt;/strong&gt;: força o uso de conexões criptografadas, evitando assim um ataque de Man in the Middle, que pode ocorrer, por exemplo em Wifi Públicos, já que todas as requisições são forçadas a serem em HTTPS.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Content Security Policy (CSP)&lt;/strong&gt;: Protege contra ataques de injeção de conteúdos como Cross-Site Scripting (XSS), por bloquear requisição entre domínios não autorizados.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;X-Frame-Options&lt;/strong&gt;:  Evita ataques como Clickjacking ( ataque de roubo de cliques ), por dizer se o browser se deve ou não deve carregar conteúdos de endereços especificados,  importante para  tags html como &lt;code&gt;&amp;lt;frame&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;object&amp;gt;&lt;/code&gt; ou &lt;code&gt;&amp;lt;embed&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;X-Content-Type-Options&lt;/strong&gt;: Protege contra vulnerabilidades de MIME sniffing, evita que o browser carregue arquivos que foram injetados de forma invalida ou indevida, evitando por exemplo que  seja injetado um arquivo texto com um javascript e ele seja executado do lado do cliente.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;X-XSS-Protection&lt;/strong&gt;: faz com que os navegadores apliquem filtros contra ataques XSS.  XSS são ataques onde uma pessoa poder forçar a execução de códigos indevidos/arbitrários na maquina de outra pessoa.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-2. **Content Security Policy (CSP)**: Protege contra ataques de injeção de conteúdos como Cross-Site Scripting (XSS), por bloquear requisição entre domínios não autorizados. 
+&lt;p&gt;Bônus 2 extras:&lt;/p&gt;
 
-3. **X-Frame-Options**:  Evita ataques como Clickjacking ( ataque de roubo de cliques ), por dizer se o browser se deve ou não deve carregar conteúdos de endereços especificados,  importante para  tags html como `&lt;frame&gt;`, `&lt;iframe&gt;`, `&lt;object&gt;` ou `&lt;embed&gt;`.
+&lt;p&gt;Server:&lt;/p&gt;
 
-4. **X-Content-Type-Options**: Protege contra vulnerabilidades de MIME sniffing, evita que o browser carregue arquivos que foram injetados de forma invalida ou indevida, evitando por exemplo que  seja injetado um arquivo texto com um javascript e ele seja executado do lado do cliente.
+&lt;p&gt;X-Powered-By:&lt;/p&gt;
 
-5. **X-XSS-Protection**: faz com que os navegadores apliquem filtros contra ataques XSS.  XSS são ataques onde uma pessoa poder forçar a execução de códigos indevidos/arbitrários na maquina de outra pessoa. 
+&lt;p&gt;Como validar&lt;/p&gt;
 
+&lt;p&gt;Browser&lt;/p&gt;
 
-Bônus 2 extras: 
+&lt;p&gt;Valores esperados:&lt;/p&gt;
 
-Server: 
+&lt;p&gt;HTTP Strict-Transport-Security (HSTS):&lt;/p&gt;
 
-X-Powered-By:
+&lt;ul&gt;
+  &lt;li&gt;Strict-Transport-Security: max-age=&lt;code&gt;expire-time&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Strict-Transport-Security: max-age=&lt;code&gt;expire-time&lt;/code&gt;; includeSubDomains&lt;/li&gt;
+  &lt;li&gt;Strict-Transport-Security: max-age=&lt;code&gt;expire-time&lt;/code&gt;; preload
+    &lt;blockquote&gt;
+      &lt;p&gt;Note que você deve incluir um número para o expire-time, tempo em segundo.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-Como validar
+&lt;p&gt;Content Security Policy (CSP):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Content-Security-Policy: policy
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Exemplo&lt;/strong&gt; Content-Security-Policy: default-src ‘self’&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-Browser 
+&lt;p&gt;X-Frame-Options:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;X-Frame-Options: DENY&lt;/li&gt;
+  &lt;li&gt;X-Frame-Options: SAMEORIGIN&lt;/li&gt;
+&lt;/ul&gt;
 
-Valores esperados:
+&lt;p&gt;X-Content-Type-Options:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;X-Content-Type-Options: nosniff&lt;/li&gt;
+&lt;/ul&gt;
 
-HTTP Strict-Transport-Security (HSTS):
-
-- Strict-Transport-Security: max-age=`expire-time`
-- Strict-Transport-Security: max-age=`expire-time`; includeSubDomains
-- Strict-Transport-Security: max-age=`expire-time`; preload
-&gt; Note que você deve incluir um número para o expire-time, tempo em segundo.
-
-Content Security Policy (CSP):
-- Content-Security-Policy: policy
-&gt; **Exemplo** Content-Security-Policy: default-src 'self'
-
-X-Frame-Options: 
-- X-Frame-Options: DENY
-- X-Frame-Options: SAMEORIGIN
-
-X-Content-Type-Options:
-- X-Content-Type-Options: nosniff
-
-X-XSS-Protection:
-- X-XSS-Protection: 1
-- X-XSS-Protection: 1; mode=block
-- X-XSS-Protection: 1; report=&lt; reporting-uri &gt;
-&gt; 1 habilita a filtragem, se um ataque for detactado ele reporta ao *reporting-uri* o ataque</content><author><name>caubit</name></author><category term="cybersecurity" /><category term="web" /><summary type="html">HTTP Headers permitem que o browser ( client ) e o servidor se comunicam através de HTTP request ou response e para proteger o cliente ( browser ) contra alguns ataques, foram adicionados a browser modernos alguns mecanismos de proteção para tratar vulnerabilidades.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2.jpg" /><media:content medium="image" url="/assets/images/2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;X-XSS-Protection:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;X-XSS-Protection: 1&lt;/li&gt;
+  &lt;li&gt;X-XSS-Protection: 1; mode=block&lt;/li&gt;
+  &lt;li&gt;X-XSS-Protection: 1; report=&amp;lt; reporting-uri &amp;gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;1 habilita a filtragem, se um ataque for detactado ele reporta ao &lt;em&gt;reporting-uri&lt;/em&gt; o ataque&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>caubit</name></author><category term="cybersecurity" /><category term="web" /><summary type="html">HTTP Headers permitem que o browser ( client ) e o servidor se comunicam através de HTTP request ou response e para proteger o cliente ( browser ) contra alguns ataques, foram adicionados a browser modernos alguns mecanismos de proteção para tratar vulnerabilidades.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2.jpg" /><media:content medium="image" url="/assets/images/2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
