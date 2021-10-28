@@ -1,1 +1,1 @@
-Sitemap: /callbit-site/sitemap.xml
+Sitemap: /sitemap.xml
