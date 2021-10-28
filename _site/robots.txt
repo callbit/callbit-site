@@ -1,1 +1,1 @@
-Sitemap: /affiliates-jekyll-theme/sitemap.xml
+Sitemap: /callbit-site/sitemap.xml
