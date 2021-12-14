@@ -1,7 +1,0 @@
-I"<h1 id="resumo">Resumo:</h1>
-<ul>
-  <li>Esta é uma vulnerabilidade que possibilita a execução remota de código e é simples de explorar;</li>
-  <li>Já existe correção disponível;</li>
-  <li>Muitos WAF podem ter regras habilitadas para possibilitar a mitigação;</li>
-</ul>
-:ET

@@ -1,7 +1,7 @@
 title: "Callbit.com.br"
 email: rjcaubit@gmail.com
 timezone: UTC
-baseurl: ""
+baseurl: "/"
 permalink: "/:title/"
 logo: 'assets/images/callbit.png'
 favicon: 'assets/images/favico.ico'
