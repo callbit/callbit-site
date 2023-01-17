@@ -1,4 +1,4 @@
-I"�<p>GitHub é uma plataforma de desenvolvimento de software baseada em nuvem que oferece armazenamento de código e ferramentas de colaboração para desenvolvedores. Ele permite que os desenvolvedores armazenem, compartilhem e colaborem em projetos de software usando o sistema de controle de versão Git. Além disso, oferece recursos adicionais, como gerenciamento de tarefas, relatórios de erros e integrações de terceiros.</p>
+I"�<p>GitHub é uma plataforma de desenvolvimento de software baseada em nuvem que oferece armazenamento de código e ferramentas de colaboração para desenvolvedores. Ele permite que os desenvolvedores armazenem, compartilhem e colaborem em projetos de software usando o sistema de controle de versão Git. Além disso, oferece recursos adicionais, como gerenciamento de tarefas, relatórios de erros e integrações de terceiros.</p>
 
 <h1 id="instalando-o-git">Instalando o Git</h1>
 
@@ -59,6 +59,12 @@ $ git config –global user.email “seu@email.com”</p>
 
 <blockquote>
   <p>$ git add file.txt</p>
+</blockquote>
+
+<p>ou</p>
+
+<blockquote>
+  <p>$ git add .</p>
 </blockquote>
 
 <ul>
