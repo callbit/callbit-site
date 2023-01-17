@@ -1,0 +1,121 @@
+I"�<p>GitHub é uma plataforma de desenvolvimento de software baseada em nuvem que oferece armazenamento de código e ferramentas de colaboração para desenvolvedores. Ele permite que os desenvolvedores armazenem, compartilhem e colaborem em projetos de software usando o sistema de controle de versão Git. Além disso, oferece recursos adicionais, como gerenciamento de tarefas, relatórios de erros e integrações de terceiros.</p>
+
+<h1 id="instalando-o-git">Instalando o Git</h1>
+
+<p>Instale o Git: você pode baixar o instalador do Git para Windows, Mac ou Linux no site oficial.</p>
+
+<p>Configure seu nome de usuário e endereço de e-mail: o Git usa essas informações para identificar quem fez as alterações nos commits. Você pode configurá-los usando os seguintes comandos:</p>
+
+<blockquote>
+  <p>$ git config –global user.name “Seu nome”
+$ git config –global user.email “seu@email.com”</p>
+</blockquote>
+
+<p>Configure seu editor de texto padrão: o Git usa um editor de texto para compor mensagens de commit. Você pode configurar o editor padrão usando o seguinte comando:</p>
+
+<blockquote>
+  <p>$ git config –global core.editor “nomedoeditor”</p>
+</blockquote>
+
+<p>Configure o git para usar o ssh: caso você tenha uma chave ssh configurada, você pode usar ela para se autenticar no github, evitando digitar sua senha toda vez que for fazer um push ou pull.</p>
+
+<blockquote>
+  <p>$ git config –global user.email “seu@email.com”</p>
+</blockquote>
+
+<h1 id="top-comandos-básicos">Top Comandos básicos:</h1>
+
+<p>Esses são os passos básicos para configurar o Git em sua máquina. Existem outras configurações avançadas que você pode fazer, mas essas são as mais importantes para começar a usar o Git.</p>
+
+<p>Aqui estão alguns dos comandos básicos do Git e como usá-los:</p>
+
+<ul>
+  <li><strong>git init</strong>: inicializa um novo repositório Git em uma pasta específica.</li>
+</ul>
+
+<blockquote>
+  <p>$ git init</p>
+</blockquote>
+
+<ul>
+  <li><strong>git clone</strong>: cria uma cópia local de um repositório remoto.</li>
+</ul>
+
+<blockquote>
+  <p>$ git clone https://github.com/user/repo.git</p>
+</blockquote>
+
+<ul>
+  <li><strong>git status</strong>: mostra o status atual do repositório, incluindo quais arquivos foram modificados e/ou adicionados.</li>
+</ul>
+
+<blockquote>
+  <p>$ git status</p>
+</blockquote>
+
+<ul>
+  <li><strong>git add</strong>: adiciona um arquivo ou uma pasta para o próximo commit.</li>
+</ul>
+
+<blockquote>
+  <p>$ git add file.txt</p>
+</blockquote>
+
+<ul>
+  <li><strong>git commit</strong>: salva as alterações adicionadas em um novo commit.</li>
+</ul>
+
+<blockquote>
+  <p>$ git commit -m “Commit message”</p>
+</blockquote>
+
+<ul>
+  <li><strong>git log</strong>: mostra o histórico de commits no repositório.</li>
+</ul>
+
+<blockquote>
+  <p>$ git log</p>
+</blockquote>
+
+<ul>
+  <li><strong>git diff</strong>: mostra as diferenças entre as versões atuais e anteriores de um arquivo.</li>
+</ul>
+
+<blockquote>
+  <p>$ git diff file.txt</p>
+</blockquote>
+
+<ul>
+  <li><strong>git branch</strong>: gerencia ramificações (branches) no repositório.</li>
+</ul>
+
+<blockquote>
+  <p>$ git branch</p>
+</blockquote>
+
+<ul>
+  <li><strong>git checkout</strong>: muda para outra ramificação ou volta para uma versão anterior de um arquivo.</li>
+</ul>
+
+<blockquote>
+  <p>$ git checkout branch-name</p>
+</blockquote>
+
+<ul>
+  <li><strong>git push</strong>: envia as alterações para o repositório remoto.</li>
+</ul>
+
+<blockquote>
+  <p>$ git push origin branch-name</p>
+</blockquote>
+
+<ul>
+  <li><strong>git pull</strong>: baixa as atualizações do repositório remoto e as aplica ao repositório local.</li>
+</ul>
+
+<blockquote>
+  <p>$ git pull origin branch-name</p>
+</blockquote>
+
+<p>Esses são alguns dos comandos básicos do Git, que permitem você inicializar, clonar, gerenciar e enviar as alterações para um repositório. No entanto, existem muitos outros comandos e recursos avançados disponíveis no Git.</p>
+:ET
