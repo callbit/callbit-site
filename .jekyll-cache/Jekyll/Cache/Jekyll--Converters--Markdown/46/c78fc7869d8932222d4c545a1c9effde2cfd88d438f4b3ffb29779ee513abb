@@ -1,0 +1,36 @@
+I"I<p>Jekyll é um gerador de sites estáticos que é usado para criar blogs e sites estáticos. Ele é baseado em Ruby e é executado no lado do servidor. Ele permite que você escreva conteúdo em formatos como Markdown ou Textile e, em seguida, o converte em HTML estático.</p>
+
+<p>Aqui estão alguns passos básicos para usar o Jekyll:</p>
+
+<ol>
+  <li>Instale o Ruby e o Jekyll em seu sistema. Isso pode ser feito executando o seguinte comando no terminal:
+    <blockquote>
+      <p>$ gem install jekyll</p>
+    </blockquote>
+  </li>
+  <li>Crie um novo diretório para o seu projeto e entre nele:
+    <blockquote>
+      <p>$ mkdir meu-novo-projeto 
+$ cd meu-novo-projeto</p>
+    </blockquote>
+  </li>
+  <li>Inicialize o Jekyll no diretório:
+    <blockquote>
+      <p>$ jekyll new .</p>
+    </blockquote>
+  </li>
+  <li>Inicie o servidor de desenvolvimento:
+    <blockquote>
+      <p>$ jekyll serve</p>
+    </blockquote>
+  </li>
+</ol>
+
+<p>Abra o seu navegador e vá para http://localhost:4000 para ver o seu site.</p>
+
+<p>Para adicionar conteúdo, você pode escrever artigos em Markdown ou Textile e colocá-los na pasta “_posts” do seu projeto.</p>
+
+<p>Para customizar o layout e o estilo do seu site, você pode editar os arquivos na pasta “_layouts” e “css”</p>
+
+<p>Para publicar seu site, você pode usar um serviço de hospedagem</p>
+:ET
